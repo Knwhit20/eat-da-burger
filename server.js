@@ -2,7 +2,7 @@ var express = require("express")
 //Set Handlebars
 var exphbs = require("express-handlebars")
 var bodyParser = require('body-parser')
-var methodOverride = require("method-override");
+// var methodOverride = require("method-override");
 
 var path = require("path");
 
