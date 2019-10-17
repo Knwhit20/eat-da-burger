@@ -1,4 +1,45 @@
-{{!-- Create a button in `index.handlebars` that will submit the user input into the database. --}}
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Eat da Burger!!</h1>
+        <img src="public/assets/images/burgers2.jpeg" class="img-fluid" alt="gourmet burger">
+        <p class="lead"></p>
+    </div>
+</div>
+<ul>
+    {{#each hbsObject}}
+    <li>
+        <p>Burger name:{{burger_name}}</p>
+        <p>Devoured: {{boolean}}</p>
+    </li>
+    {{/each}}
+</ul>
 
 
-<h1>Eat da Burger</h1>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col md 4">
+            <form>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1"></label>
+                    <textarea class="form-control" id="addBurger" rows="3"
+                        placeholder="enter your burger name"></textarea>
+                </div>
+                <button id="submit" type="submit" class="btn btn-primary">Add burger</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+{{!-- {!-- Create a button in `index.handlebars` that will submit the user input into the database. --}}
