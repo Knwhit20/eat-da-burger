@@ -3,8 +3,8 @@ var router = express.Router()
 
 var burger = require("../models/burger.js");
 
-router.get("/burgers", function (req, res){
-    burger.select(function(data){
+router.get("/", function (req, res){
+    burger.selectAll(function(data){
         var hbsObject = {
             burgers: data
         };
@@ -28,9 +28,7 @@ router.put("burgers/update/:id", function (req, res) {
     var condition = "id = " + req.params.id;
 
     console.log("condition, condition");
-
 })
-
 
 
 router.delete("/api/burgers/:id", function (req, res){
