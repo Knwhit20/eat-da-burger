@@ -1,6 +1,6 @@
 img {
     align-content: center;
-    width: 100%;
+    width: 75%;
 }
 
 .card-body {
@@ -17,6 +17,7 @@ h2 {
     text-align: center;
     width: 75%;
     margin-right: 0%;
+    padding-right: 0px;
 }
 
 .form {
