@@ -1,37 +1,76 @@
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
         <h1 class="display-4">Eat da Burger!!</h1>
-        <img src="public/assets/images/burger3.jpeg" class="img-fluid" alt="gourmet burger">
+        <img src="../public/assets/images/burgers2.jpeg" class="img-fluid" alt="gourmet burger">
         <p class="lead"></p>
     </div>
 </div>
 <ul>
-    {{#each hbsObject}}
-    <li>
-        <p>Burger name:{{burger_name}}</p>
-        <p>Devoured: {{boolean}}</p>
-    </li>
-    {{/each}}
-</ul>
-
-
-
-
-
-<div class="container">
-    <div class="row">
-        <div class="col md 4">
-            <form>
-                <div class="form-group">
-                    <label for="exampleFormControlTextarea1"></label>
-                    <textarea class="form-control" id="addBurger" rows="3"
-                        placeholder="enter your burger name"></textarea>
-                </div>
-                <button id="submit" type="submit" class="btn btn-primary">Add burger</button>
-            </form>
+    <form class="create-form">
+        <div class="form-group py-3 mb-4">
+            <label for="burger_name">Burger name</label>
+            <input type="hidden" name="id" value="{{id}}">
+            <input type="text" class="form-control form-control-lg" id="burger_name" name="name" value="{{name}}"
+                required>
         </div>
-    </div>
-</div>
+
+        <button type="submit" class="btn btn-success text-center" id="addburger" title="Click to submit">Submit
+            <span class="fa fa-thumbs-up"></span>
+        </button>
+    </form>
+    <div class="container">
+        <div class="row">
+            <div class="card">
+                <div class="card-body">
+                    This is some text within a card body.
+
+                    <div class="panel-body">
+
+                        <ul>
+                            {{#each burgers}}
+                            {{#unless devoured}}
+
+                            <span><strong> {{this.id}} - {{this.burger_name}}</strong></span>
+                            <button type="button" class="eatburger btn btn-warning" id="eatbutton" data-id="{{this.id}}"
+                                data-newDevoured="{{devour}}"><span class="fa fa-usd"></span></button>
+                            <hr>
+                            {{/unless}}
+                            {{/each}}
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    This is some text within a card body.
+
+                    <div class="panel-body">
+                        <ul>
+                            {{#each burgers}}
+                            {{#if devoured}}
+                            <span><strong> {{this.id}} - {{this.burger_name}}</strong></span>
+
+                            {{/if}}
+                            {{/each}}
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <script type="text/javascript">
+
+
+
+
+        </script>
 
 
 
@@ -42,5 +81,4 @@
 
 
 
-
-{{!-- {!-- Create a button in `index.handlebars` that will submit the user input into the database. --}}
+        {{!-- {!-- Create a button in `index.handlebars` that will submit the user input into the database. --}}

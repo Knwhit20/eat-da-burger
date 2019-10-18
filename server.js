@@ -1,8 +1,10 @@
 var express = require("express")
+require("dotenv").config();
+
 //Set Handlebars
 var exphbs = require("express-handlebars")
 var bodyParser = require('body-parser')
-// var methodOverride = require("method-override");
+
 
 var path = require("path");
 
@@ -14,7 +16,7 @@ var app = express();
 app.use(express.static("public"));
 
 // Parse request body as JSON
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
 
 
