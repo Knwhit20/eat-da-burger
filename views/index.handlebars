@@ -1,60 +1,66 @@
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
-        <h1 class="display-4">Eat da Burger!!</h1>
-        <img src="../assets/images/burgers2.jpeg" class="img-fluid" alt="gourmet burger">
+        <h1 class="display-4 text-center">Burgers Burgers Burgers!</h1>
+        <img src="../assets/images/burgers2.jpeg" class="text-center" alt="gourmet burger">
         <p class="lead"></p>
     </div>
 </div>
 <ul>
     <form class="create-form">
-        <div class="form-group py-3 mb-4">
-            <label for="burger_name">Burger name</label>
+        <div class="burger-entry form-group py-3 mb-4">
+            <label class="form" for="burger_name">Enter a burger:</label>
             <input type="hidden" name="id" value="{{id}}">
             <input type="text" class="form-control form-control-lg" id="newburger" name="name" value="{{name}}"
                 required>
         </div>
 
         <button type="submit" class="btn btn-success text-center" id="addburger" title="Click to submit">Submit
-            <span class="fa fa-thumbs-up"></span>
+            
         </button>
     </form>
     <div class="container">
         <div class="row">
-            <div class="card">
-                <div class="card-body">
-                    This is some text within a card body.
+            <div class="col md 6">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>Burgers to be devoured</h2>
 
-                    <div class="panel-body">
+                        <div class="panel-body">
 
-                        <ul>
-                            {{#each burgers}}
-                            {{#unless devoured}}
+                            <ul>
+                                {{#each burgers}}
+                                {{#unless devoured}}
 
-                            <span><strong> {{this.id}} - {{this.burger_name}}</strong></span>
-                            <button type="button" class="eatburger btn btn-warning" data-id="{{this.id}}"
-                                data-newDevoured="{{devour}}"><span class="fa fa-usd"></span></button>
-                            <hr>
-                            {{/unless}}
-                            {{/each}}
-                        </ul>
+                                <span><strong> {{this.id}} - {{this.burger_name}}</strong></span>
+                                <button type="button" class="eatburger btn btn-warning" data-id="{{this.id}}"
+                                    data-newDevoured="{{devour}}"><span class="fa fa-usd"></span></button>
+                                <hr>
+                                {{/unless}}
+                                {{/each}}
+                            </ul>
 
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="card">
-                <div class="card-body">
-                    This is some text within a card body.
+            <div class="col md 6">
+                <div class="card">
 
-                    <div class="panel-body">
-                        <ul>
-                            {{#each burgers}}
-                            {{#if devoured}}
-                            <span><strong> {{this.id}} - {{this.burger_name}}</strong></span>
+                    <div class="card-body">
+                        <h2>Devoured Burgers</h2>
 
-                            {{/if}}
-                            {{/each}}
-                        </ul>
 
+                        <div class="panel-body">
+                            <ul>
+                                {{#each burgers}}
+                                {{#if devoured}}
+                                <span><strong> {{this.id}} - {{this.burger_name}}</strong></span>
+
+                                {{/if}}
+                                {{/each}}
+                            </ul>
+
+                        </div>
                     </div>
                 </div>
             </div>
