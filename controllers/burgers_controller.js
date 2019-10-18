@@ -14,20 +14,21 @@ router.get("/", function (req, res){
 });
 
 
-router.post("/burgers/create", function (req, res){
-    burger.create(["burger", "devoured"], 
-    [req.body.name, req.body.devoured],
-    function(result) {
+router.post("/api/burgers", function (req, res){
+    burger.create(["burger_name", "devoured"], [req.body.burger_name, req.body.devoured],function(result) {
         res.json({ id: result.insertID})
     });
 });
 
 
 
-router.put("burgers/update/:id", function (req, res) {
+router.put("/api/burgers/:id", function (req, res) {
     var condition = "id = " + req.params.id;
-
-    console.log("condition, condition");
+    burger.update(req.body, condition, function(result) {
+        res.send(200);
+    })
+   
+    
 })
 
 

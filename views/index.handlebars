@@ -1,7 +1,7 @@
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
         <h1 class="display-4">Eat da Burger!!</h1>
-        <img src="../public/assets/images/burgers2.jpeg" class="img-fluid" alt="gourmet burger">
+        <img src="../assets/images/burgers2.jpeg" class="img-fluid" alt="gourmet burger">
         <p class="lead"></p>
     </div>
 </div>
@@ -10,7 +10,7 @@
         <div class="form-group py-3 mb-4">
             <label for="burger_name">Burger name</label>
             <input type="hidden" name="id" value="{{id}}">
-            <input type="text" class="form-control form-control-lg" id="burger_name" name="name" value="{{name}}"
+            <input type="text" class="form-control form-control-lg" id="newburger" name="name" value="{{name}}"
                 required>
         </div>
 
@@ -31,7 +31,7 @@
                             {{#unless devoured}}
 
                             <span><strong> {{this.id}} - {{this.burger_name}}</strong></span>
-                            <button type="button" class="eatburger btn btn-warning" id="eatbutton" data-id="{{this.id}}"
+                            <button type="button" class="eatburger btn btn-warning" data-id="{{this.id}}"
                                 data-newDevoured="{{devour}}"><span class="fa fa-usd"></span></button>
                             <hr>
                             {{/unless}}
